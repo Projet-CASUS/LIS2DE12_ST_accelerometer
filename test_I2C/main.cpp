@@ -72,9 +72,9 @@ void setup_bypass(){
 void run_bypass(){
 	while(1){
 	cout 
-		<< "X : " << wiringPiI2CReadReg8(fd, OUT_X_H)
-		<< "Y : " << wiringPiI2CReadReg8(fd, OUT_Y_H)
-		<< "Z : " << wiringPiI2CReadReg8(fd, OUT_Z_H)
+		<< " X: " << wiringPiI2CReadReg8(fd, OUT_X_H)
+		<< " Y: " << wiringPiI2CReadReg8(fd, OUT_Y_H)
+		<< " Z: " << wiringPiI2CReadReg8(fd, OUT_Z_H)
 		<< endl;
 	}
 }
