@@ -15,5 +15,5 @@ int main (int argc, char **argv){
     }
 	std::cout << "I2C communication successfully setup.\n";
 	
-	std::cout << wiringPiI2CReadReg8(fd, WHO_AM_I) << "\n";
+	std::cout << wiringPiI2CRead(fd, WHO_AM_I) << "\n";
 }
