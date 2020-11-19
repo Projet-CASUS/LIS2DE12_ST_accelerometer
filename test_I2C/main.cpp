@@ -46,7 +46,7 @@
 
 int fd;
 
-using namespace std
+using namespace std;
 
 void setup_bypass();
 void run_bypass();
