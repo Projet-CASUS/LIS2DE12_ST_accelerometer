@@ -1,3 +1,5 @@
+//g++ -o i2c_wiringpi_test main.cpp -lwiringPi
+
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -42,6 +44,8 @@
 #define ACT_THS 0x3E
 #define ACT_DUR 0x3F
 
+int fd;
+
 using namespace std
 
 void setup_bypass();
@@ -50,7 +54,7 @@ void run_bypass();
 
 int main (int argc, char **argv){
 	// Setup I2C communication
-    int fd = wiringPiI2CSetup(DEVICE_ID);
+    fd = wiringPiI2CSetup(DEVICE_ID);
     if (fd == -1) {
         std::cout << "Failed to init I2C communication." << endl;
         return -1;
