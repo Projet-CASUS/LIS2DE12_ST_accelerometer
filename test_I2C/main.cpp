@@ -62,6 +62,7 @@ int main (int argc, char **argv){
 	cout << "I2C communication successfully setup." << endl;
 	
 	cout << wiringPiI2CReadReg8(fd, WHO_AM_I) << endl;
+	run_bypass();
 }
 
 void setup_bypass(){
