@@ -26,6 +26,8 @@ int main (int argc, char **argv){
 	
 	if(!setup()){
 		cout << "Failed to setup I2C communication" << endl;
+		//delete reg
+		return -1;
 	}
 	cout << "I2C communication successfully setup." << endl;
 	
