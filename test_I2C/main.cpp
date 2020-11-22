@@ -50,8 +50,8 @@ void run(){
 	int ok = 0;
 	int test;
 	int sample = 100;
-	while(1){
-	/*cout 
+	/*while(1){
+	cout 
 		<< " X: " << reg.read(OUT_X_H)
 		<< " Y: " << reg.read(OUT_Y_H)
 		<< " Z: " << reg.read(OUT_Z_H)
@@ -67,3 +67,4 @@ void run(){
 	}
 	cout << "FAILED: " << fail << "      PASS: " << ok << endl;
 }
+
