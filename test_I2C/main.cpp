@@ -11,12 +11,11 @@ using namespace std;
 
 bool setup();
 void run();
-Registers reg;
+Registers reg();
 
 
 int main (int argc, char **argv){
 	// Setup I2C communication
-	reg = new Registers();
 	
     if (reg.get_fd() == -1) {
         cout << "Failed to initiate I2C communication." << endl;
