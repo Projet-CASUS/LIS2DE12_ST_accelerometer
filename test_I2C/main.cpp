@@ -35,7 +35,12 @@ int main (int argc, char **argv){
 }
 
 bool setup(){
-	return reg.setup_CTRL_REG1(0x1F);
+	bool a = reg.setup_CTRL_REG1(0x1F);
+	int verify = reg.read(CTRL_REG1);
+	if(verify == 0x1F && a){
+		return true;
+	}
+	return false;
 }
 
 void run(){
