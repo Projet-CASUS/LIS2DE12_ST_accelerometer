@@ -44,7 +44,7 @@
 
 class Registers{
 private:
-	int fd
+	int fd;
 public:
 	Registers();
 	
