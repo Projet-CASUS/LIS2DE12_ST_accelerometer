@@ -24,12 +24,12 @@ int main (int argc, char **argv){
     }
 	cout << "I2C communication successfully initiated." << endl;
 	
-	if(!setup()){
+	/*if(!setup()){
 		cout << "Failed to setup I2C communication" << endl;
 		//delete reg
 		return -1;
 	}
-	cout << "I2C communication successfully setup." << endl;
+	cout << "I2C communication successfully setup." << endl;*/
 	
 	//cout << reg.read(WHO_AM_I) << endl;
 	run();
