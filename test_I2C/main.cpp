@@ -42,6 +42,8 @@ bool setup(){
 	if(verify == 0x1F && a){
 		return true;
 	}
+	cout << a << endl;
+	cout <<verify << endl;
 	return false;
 }
 
