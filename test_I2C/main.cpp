@@ -32,7 +32,7 @@ int main (int argc, char **argv){
 	cout << "I2C communication successfully setup." << endl;
 	
 	cout << reg.read(WHO_AM_I) << endl;
-	//run();
+	run();
 	return 0;
 }
 
