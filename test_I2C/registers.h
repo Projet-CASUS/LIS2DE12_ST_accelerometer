@@ -48,9 +48,9 @@ private:
 public:
 	Registers();
 	
-	bool write_CTRL_REG0_();
-	bool write_TEMP_CFG_REG_();
-	bool write_CTRL_REG1_(int setup);
+	bool disable_pullup_CTRL_REG0();
+	bool enable_TEMP_CFG_REG();
+	bool setup_CTRL_REG1(int setup);
 	
 	int read(int reg);
 	int write(int reg, int data);

@@ -18,7 +18,7 @@ bool Registers::enable_TEMP_CFG_REG(){
 	return true
 }
 
-bool Registers::setup_CTRL_REG1_(int setup){
+bool Registers::setup_CTRL_REG1(int setup){
 	
 	return true;
 }
