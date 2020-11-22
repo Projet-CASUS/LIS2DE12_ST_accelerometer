@@ -19,7 +19,7 @@ bool Registers::enable_TEMP_CFG_REG(){
 }
 
 bool Registers::setup_CTRL_REG1(int setup){
-	
+	if(wiringPiI2CWriteReg8(fd, CTRL_REG1, setup) == -1){return false;}
 	return true;
 }
 
@@ -38,6 +38,3 @@ int Registers::get_fd(){
 	return fd;
 }
 
-void Registers::set_fd(int FD){
-	fd = FD;
-}

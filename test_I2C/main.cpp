@@ -1,4 +1,4 @@
-//g++ -o i2c_wiringpi_test main.cpp -lwiringPi
+//g++ main.cpp registers.cpp -o LIS2DE12_Driver -lwiringPi
 
 #include <iostream>
 #include <thread>
@@ -24,7 +24,7 @@ int main (int argc, char **argv){
     }
 	cout << "I2C communication successfully initiated." << endl;
 	
-	if(setup()){
+	if(!setup()){
 		cout << "Failed to setup I2C communication" << endl;
 	}
 	cout << "I2C communication successfully setup." << endl;
@@ -35,8 +35,7 @@ int main (int argc, char **argv){
 }
 
 bool setup(){
-	
-	return 0; // success
+	return reg.setup_CTRL_REG1(0x1F);
 }
 
 void run(){

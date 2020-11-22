@@ -55,6 +55,5 @@ public:
 	int read(int reg);
 	int write(int reg, int data);
 	int get_fd();
-	void set_fd(int FD);
 };
 
