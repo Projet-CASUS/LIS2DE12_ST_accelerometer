@@ -11,7 +11,7 @@ using namespace std;
 
 bool setup();
 void run();
-Registers reg();
+Registers reg;
 
 
 int main (int argc, char **argv){
