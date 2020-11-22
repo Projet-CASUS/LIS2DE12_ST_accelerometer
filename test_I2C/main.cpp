@@ -9,13 +9,14 @@
 
 using namespace std;
 
-void setup();
+bool setup();
 void run();
+Registers reg;
 
 
 int main (int argc, char **argv){
 	// Setup I2C communication
-    Registers reg = new Registers();
+	reg = new Registers();
 	
     if (reg.get_fd() == -1) {
         cout << "Failed to initiate I2C communication." << endl;
