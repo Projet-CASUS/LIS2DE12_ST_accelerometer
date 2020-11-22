@@ -52,8 +52,8 @@ public:
 	bool write_TEMP_CFG_REG_();
 	bool write_CTRL_REG1_(int setup);
 	
-	bool read(int reg);
-	bool write(int reg, int data);
+	int read(int reg);
+	int write(int reg, int data);
 	int get_fd();
 	void set_fd(int FD);
 };
