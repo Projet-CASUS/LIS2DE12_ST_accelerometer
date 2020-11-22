@@ -31,7 +31,7 @@ int main (int argc, char **argv){
 	}
 	cout << "I2C communication successfully setup." << endl;
 	
-	cout << reg.read(WHO_AM_I) << endl;
+	//cout << reg.read(WHO_AM_I) << endl;
 	run();
 	return 0;
 }
@@ -46,11 +46,24 @@ bool setup(){
 }
 
 void run(){
+	int fail = 0;
+	int ok = 0;
+	int test;
+	int sample = 100;
 	while(1){
-	cout 
+	/*cout 
 		<< " X: " << reg.read(OUT_X_H)
 		<< " Y: " << reg.read(OUT_Y_H)
 		<< " Z: " << reg.read(OUT_Z_H)
 		<< endl;
+	}*/
+	for(int i=0; i<sample; i++){
+		test = reg.read(WHO_AM_I);
+		if( test == -1 || test != 51){
+			fail++;
+		}else{
+			ok++;
+		}
 	}
+	cout << "FAILED: " << fail << "      PASS: " << ok << endl;
 }
