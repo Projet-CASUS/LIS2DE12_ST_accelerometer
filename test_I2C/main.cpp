@@ -16,34 +16,26 @@ Registers reg;
 
 int main (int argc, char **argv){
 	// Setup I2C communication
+	setup();
+
 	
-    if (reg.get_fd() == -1) {
-        cout << "Failed to initiate I2C communication." << endl;
-		//delete reg
-        return -1;
-    }
-	cout << "I2C communication successfully initiated." << endl;
 	
-	/*if(!setup()){
-		cout << "Failed to setup I2C communication" << endl;
-		//delete reg
-		return -1;
-	}
-	cout << "I2C communication successfully setup." << endl;*/
-	
-	//cout << reg.read(WHO_AM_I) << endl;
 	run();
 	return 0;
 }
 
 bool setup(){
-	bool a = reg.setup_CTRL_REG1(0x1F);
-	int verify = reg.read(CTRL_REG1);
-	if(verify == 0x1F && a){
-		return true;
-	}
-	cout << a << endl;
-	cout <<verify << endl;
+	//Init the device communication
+    if (reg.get_fd() == -1) {
+        cout << "Failed to initiate I2C communication." << endl;
+		//delete reg
+        return 0;
+    }
+	cout << "I2C communication successfully initiated." << endl;
+	
+	// Set the control register #1
+	if(!reg.setup_CTRL_REG1(0x1F)){return 0;}
+	
 	return false;
 }
 
@@ -67,6 +59,6 @@ void run(){
 			ok++;
 		}
 	}
-	cout << "FAILED: " << fail << "      PASS: " << ok << endl;
+	cout << "FAILED: " << fail << "\t\t PASS: " << ok << endl;
 }
 

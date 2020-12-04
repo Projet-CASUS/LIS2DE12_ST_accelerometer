@@ -4,6 +4,8 @@
 #include <wiringPiI2C.h>
 #include "registers.h"
 
+using namespace std;
+
 Registers::Registers(){
 	fd = wiringPiI2CSetup(DEVICE_ID);
 }
@@ -19,21 +21,51 @@ bool Registers::enable_TEMP_CFG_REG(){
 }
 
 bool Registers::setup_CTRL_REG1(int setup){
-	if(wiringPiI2CWriteReg8(fd, CTRL_REG1, setup) == -1){return false;}
-	return true;
+	int fails = 0;
+	while(1){
+		this.write(CTRL_REG1, setup);
+		int verify = this.read(CTRL_REG1);
+		if(verify == 0x1F){
+			cout << "Control registery #1 succeeded after <" << fails << "> attemps"<< endl;
+			return true;
+		}
+		fails++;
+	}
+	return false;
 }
 
 
 
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ELEMENTARY FUNCTIONS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 int Registers::read(int reg){
-	return wiringPiI2CReadReg8(fd, reg);
+	int result;
+	int fails = 0;
+	while(1){
+		result = wiringPiI2CReadReg8(fd, reg);
+		if(!result == -1){
+			cout << " Failed READ attemp to register" << reg << " :  " << fails << endl;
+			return result;
+		}
+		fails++;
+	}
+	return -1;
 }
 
 int Registers::write(int reg, int data){
-	return wiringPiI2CWriteReg8(fd, reg, data);
+	int result;
+	int fails = 0;
+	while(1){
+		result = wiringPiI2CWriteReg8(fd, reg, data);
+		if(!result == -1){
+			cout << " Failed WRITE attemp to register" << reg << " :  " << fails << endl;
+			return result;
+		}
+		fails++;
+	}
+	return -1;
 }
 
+// Built just in case... remove if not needed
 int Registers::get_fd(){
 	return fd;
 }
