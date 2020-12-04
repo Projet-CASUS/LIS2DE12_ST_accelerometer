@@ -23,8 +23,8 @@ bool Registers::enable_TEMP_CFG_REG(){
 bool Registers::setup_CTRL_REG1(int setup){
 	int fails = 0;
 	while(1){
-		this.write(CTRL_REG1, setup);
-		int verify = this.read(CTRL_REG1);
+		write(CTRL_REG1, setup);
+		int verify = read(CTRL_REG1);
 		if(verify == 0x1F){
 			cout << "Control registery #1 succeeded after <" << fails << "> attemps"<< endl;
 			return true;
