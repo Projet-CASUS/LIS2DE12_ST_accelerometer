@@ -21,6 +21,7 @@ bool Registers::enable_TEMP_CFG_REG(){
 }
 
 bool Registers::setup_CTRL_REG1(int setup){
+	cout << "Setting up control register #1" << endl;
 	int fails = 0;
 	while(1){
 		write(CTRL_REG1, setup);
@@ -38,6 +39,7 @@ bool Registers::setup_CTRL_REG1(int setup){
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ELEMENTARY FUNCTIONS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 int Registers::read(int reg){
+	cout << "READING register " << reg << endl;
 	int result;
 	int fails = 0;
 	while(1){
@@ -52,6 +54,7 @@ int Registers::read(int reg){
 }
 
 int Registers::write(int reg, int data){
+	cout << "WRITING "<< data << " to register : " << reg << endl;
 	int result;
 	int fails = 0;
 	while(1){

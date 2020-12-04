@@ -29,14 +29,14 @@ bool setup(){
     if (reg.get_fd() == -1) {
         cout << "Failed to initiate I2C communication." << endl;
 		//delete reg
-        return 0;
+        return false;
     }
 	cout << "I2C communication successfully initiated." << endl;
 	
 	// Set the control register #1
-	if(!reg.setup_CTRL_REG1(0x1F)){return 0;}
+	if(!reg.setup_CTRL_REG1(0x1F)){return false;}
 	
-	return false;
+	return true;
 }
 
 void run(){
