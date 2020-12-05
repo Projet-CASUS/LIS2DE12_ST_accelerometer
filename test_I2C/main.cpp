@@ -18,8 +18,7 @@ Registers reg;
 int main (int argc, char **argv){
 	// Setup I2C communication
 	//setup();
-	int a = -1;
-	int fails = 0;
+
 	/*while(a==-1){
 		a = reg.write(CTRL_REG1, 0x7F);
 		fails++;
@@ -29,10 +28,8 @@ int main (int argc, char **argv){
 	
 	a=-1;
 	fails=0;*/
-	while(a==-1){
-		a = reg.read(WHO_AM_I);
-		fails++;
-	}
+
+	int a = reg.read(WHO_AM_I);
 	bitset<8> y(a);
 	cout << y << "\tREAD FAILS : " << fails << endl;	
 	
