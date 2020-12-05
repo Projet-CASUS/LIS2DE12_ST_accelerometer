@@ -31,7 +31,7 @@ int main (int argc, char **argv){
 
 	int a = reg.read(WHO_AM_I);
 	bitset<8> y(a);
-	cout << y << "\tREAD FAILS : " << fails << endl;	
+	cout << y << endl;	
 	
 	//run();
 	return 0;
