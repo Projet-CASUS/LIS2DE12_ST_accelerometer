@@ -34,8 +34,8 @@ int main (int argc, char **argv){
 	cout << y << endl;	
 	
 	a = reg.read(WHO_AM_I);
-	bitset<8> y(a);
-	cout << y << endl;
+	bitset<8> z(a);
+	cout << z << endl;
 	//run();
 	return 0;
 }
