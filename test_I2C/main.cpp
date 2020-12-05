@@ -1,6 +1,7 @@
 //g++ main.cpp registers.cpp -o LIS2DE12_Driver -lwiringPi
 
 #include <iostream>
+#include <bitset>
 #include <thread>
 #include <chrono>
 #include <wiringPiI2C.h>
