@@ -17,27 +17,8 @@ Registers reg;
 
 int main (int argc, char **argv){
 	// Setup I2C communication
-	//setup();
+	setup();
 
-	/*while(a==-1){
-		a = reg.write(CTRL_REG1, 0x7F);
-		fails++;
-	}
-	bitset<8> x(a);
-	cout << x << "\tWRITE FAILS : " << fails << endl;
-	
-	a=-1;
-	fails=0;*/
-
-	int a = reg.read(WHO_AM_I);
-	bitset<8> y(a);
-	cout << y << endl;	
-	
-	reg.write(CTRL_REG1, 0x7F);
-	
-	a = reg.read(CTRL_REG1);
-	bitset<8> z(a);
-	cout << z << endl;
 	//run();
 	return 0;
 }
@@ -51,8 +32,15 @@ bool setup(){
     }
 	cout << "I2C communication successfully initiated." << endl;
 	
-	// Set the control register #1
-	if(!reg.setup_CTRL_REG1(0x1F)){return false;}
+	int a = reg.read(WHO_AM_I);
+	bitset<8> y(a);
+	cout << y << endl;	
+	
+	reg.write(CTRL_REG1, 0x7F);
+	
+	a = reg.read(CTRL_REG1);
+	bitset<8> z(a);
+	cout << z << endl;
 	
 	return true;
 }
