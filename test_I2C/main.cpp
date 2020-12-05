@@ -32,11 +32,13 @@ bool setup(){
     }
 	cout << "I2C communication successfully initiated." << endl;
 	
-	reg.write(CTRL_REG1, 0x2F);
-	reg.write(CTRL_REG2, 0x30);
-	reg.write(CTRL_REG3, 0x00);
+	reg.write(CTRL_REG1, 0x2F);		// DATA RATE
+	reg.write(CTRL_REG2, 0x30);		// HIGH PASS FILTERS
+	reg.write(CTRL_REG3, 0x00);		// INTERRUPTS
+	//reg.write(CTRL_REG4, 0x00);
 	
-	int a = reg.read(CTRL_REG3);
+	
+	int a = reg.read(CTRL_REG4);
 	bitset<8> x(a);
 	cout << x << endl;
 	
