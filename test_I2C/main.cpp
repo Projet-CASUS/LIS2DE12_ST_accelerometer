@@ -21,11 +21,11 @@ int main (int argc, char **argv){
 	int a;
 	int fails = 0;
 	while(a==-1){
-		a = reg.write(CTRL_REG1, 0b01111111);
+		a = reg.write(CTRL_REG1, 0x7F);
 		fails++;
 	}
 	bitset<8> x(a);
-	cout << x << "WRITE FAILS : " << fails << endl;
+	cout << x << "\tWRITE FAILS : " << fails << endl;
 	
 	a=-1;
 	fails=0;
@@ -34,7 +34,7 @@ int main (int argc, char **argv){
 		fails++;
 	}
 	bitset<8> y(a);
-	cout << y << "READ FAILS : " << fails << endl;	
+	cout << y << "\tREAD FAILS : " << fails << endl;	
 	
 	run();
 	return 0;
