@@ -46,10 +46,9 @@ int Registers::read(int reg){
 	while(1){
 		result = wiringPiI2CReadReg8(fd, reg);
 		if(result > -1){
-				bitset<8> x(result);
-				cout << x << endl;
+			bitset<8> x(result);
 			cout << "Failed READ attemp to register " << reg << " :  " << fails << endl;
-			cout << "Value : " << x << endl;
+			cout << "Value of register " << reg << " : " << x << endl << endl;
 			return result;
 		}
 		fails++;
