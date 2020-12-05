@@ -36,10 +36,10 @@ bool setup(){
 	reg.write(CTRL_REG2, 0x30);		// HIGH PASS FILTERS
 	reg.write(CTRL_REG3, 0x00);		// INTERRUPTS
 	reg.write(CTRL_REG4, 0x00);		// BDU  --  +/-Xg  --  self test 
+	reg.write(CTRL_REG5, 0x00);		// FIFO ENABLE  --  [...]
 	
 	
-	
-	int a = reg.read(CTRL_REG5);
+	int a = reg.read(CTRL_REG6);
 	bitset<8> x(a);
 	cout << x << endl;
 	
