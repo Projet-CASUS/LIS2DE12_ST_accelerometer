@@ -25,7 +25,16 @@ int main (int argc, char **argv){
 		fails++;
 	}
 	bitset<8> x(a);
-	cout << x << " FAILS : " << fails << endl;
+	cout << x << "WRITE FAILS : " << fails << endl;
+	
+	a=-1;
+	fails=0;
+	while(a==-1){
+		a = reg.read(CTRL_REG1);
+		fails++;
+	}
+	bitset<8> y(a);
+	cout << y << "READ FAILS : " << fails << endl;	
 	
 	run();
 	return 0;
