@@ -21,7 +21,7 @@ int main (int argc, char **argv){
 	int fails = 0;
 	while(a==-1){
 		a = reg.read(CTRL_REG1);
-		fails++;sadw
+		fails++;
 	}
 	bitset<8> x(a);
 	cout << x << " FAILS : " << fails << endl;
