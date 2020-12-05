@@ -34,7 +34,8 @@ bool setup(){
 	
 	reg.write(CTRL_REG1, 0x2F);
 	reg.write(CTRL_REG2, 0x30);
-	int a = reg.read(CTRL_REG2);
+	
+	int a = reg.read(CTRL_REG3);
 	bitset<8> x(a);
 	cout << x << endl;
 	
