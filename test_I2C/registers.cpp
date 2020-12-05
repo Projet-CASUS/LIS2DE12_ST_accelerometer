@@ -63,7 +63,7 @@ int Registers::write(int reg, int data){
 	while(1){
 		result = wiringPiI2CWriteReg8(fd, reg, data);
 		if(result > -1){
-			cout << "Failed WRITE attemp to register " << reg << " :  " << fails << endl;
+			cout << "Failed WRITE attemp to register " << reg << " :  " << fails << endl << endl;
 			return result;
 		}
 		fails++;
