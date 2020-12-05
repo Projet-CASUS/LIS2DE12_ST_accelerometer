@@ -32,7 +32,7 @@ bool setup(){
 	cout << "I2C communication successfully initiated." << endl;
 	
 	reg.write(CTRL_REG1, 0x2F);		// DATA RATE
-	//reg.write(CTRL_REG2, 0x30);		// HIGH PASS FILTERS
+	reg.write(CTRL_REG2, 0x30);		// HIGH PASS FILTERS
 	//reg.write(CTRL_REG3, 0x00);		// INTERRUPTS
 	//reg.write(CTRL_REG4, 0x00);		// BDU  --  +/-Xg  --  self test 
 	//reg.write(CTRL_REG5, 0x00);		// FIFO ENABLE  --  [...]
