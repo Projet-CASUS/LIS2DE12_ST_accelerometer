@@ -21,7 +21,7 @@ int main (int argc, char **argv){
 	int a;
 	int fails = 0;
 	while(a==-1){
-		a = reg.read(CTRL_REG1);
+		a = reg.write(CTRL_REG1, 0b01111111);
 		fails++;
 	}
 	bitset<8> x(a);
