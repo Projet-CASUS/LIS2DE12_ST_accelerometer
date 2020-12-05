@@ -20,7 +20,7 @@ int main (int argc, char **argv){
 	//setup();
 	int a = -1;
 	int fails = 0;
-	while(a==-1){
+	/*while(a==-1){
 		a = reg.write(CTRL_REG1, 0x7F);
 		fails++;
 	}
@@ -28,7 +28,7 @@ int main (int argc, char **argv){
 	cout << x << "\tWRITE FAILS : " << fails << endl;
 	
 	a=-1;
-	fails=0;
+	fails=0;*/
 	while(a==-1){
 		a = reg.read(CTRL_REG1);
 		fails++;
