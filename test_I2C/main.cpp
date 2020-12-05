@@ -30,7 +30,7 @@ int main (int argc, char **argv){
 	a=-1;
 	fails=0;*/
 	while(a==-1){
-		a = reg.read(CTRL_REG1);
+		a = reg.read(WHO_AM_I);
 		fails++;
 	}
 	bitset<8> y(a);
