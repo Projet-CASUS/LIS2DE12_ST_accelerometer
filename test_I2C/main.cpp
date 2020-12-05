@@ -38,12 +38,12 @@ bool setup(){
 	//reg.write(CTRL_REG5, 0x00);		// FIFO ENABLE  --  [...]
 	//reg.write(CTRL_REG6, 0x00);		// INTERRUPT SETUP
 	
-	int a = reg.read(CTRL_REG1);
-	int a = reg.read(CTRL_REG2);
-	int a = reg.read(CTRL_REG3);
-	int a = reg.read(CTRL_REG4);
-	int a = reg.read(CTRL_REG5);
-	int a = reg.read(CTRL_REG6);
+	reg.read(CTRL_REG1);
+	reg.read(CTRL_REG2);
+	reg.read(CTRL_REG3);
+	reg.read(CTRL_REG4);
+	reg.read(CTRL_REG5);
+	reg.read(CTRL_REG6);
 	
 	return true;
 }
