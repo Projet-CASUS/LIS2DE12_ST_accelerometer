@@ -1,7 +1,7 @@
 //g++ main.cpp registers.cpp -o LIS2DE12_Driver -lwiringPi
 
 #include <iostream>
-#include <bitset>
+#include <bitset>awsds
 #include <thread>
 #include <chrono>
 #include <wiringPiI2C.h>
@@ -17,7 +17,7 @@ Registers reg;
 
 int main (int argc, char **argv){
 	// Setup I2C communication
-	setup();
+	//setup();
 	int a;
 	int fails = 0;
 	while(a==-1){
