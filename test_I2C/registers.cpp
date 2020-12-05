@@ -46,7 +46,7 @@ int Registers::read(int reg){
 		result = wiringPiI2CReadReg8(fd, reg);
 		cout<<result<<endl;
 		if(result > -1){
-			cout << "Failed READ attemp to register" << reg << " :  " << fails << endl;
+			cout << "Failed READ attemp to register " << reg << " :  " << fails << endl;
 			return result;
 		}
 		fails++;
@@ -62,7 +62,7 @@ int Registers::write(int reg, int data){
 		result = wiringPiI2CWriteReg8(fd, reg, data);
 		cout << result << endl;
 		if(result > -1){
-			cout << "Failed WRITE attemp to register" << reg << " :  " << fails << endl;
+			cout << "Failed WRITE attemp to register " << reg << " :  " << fails << endl;
 			return result;
 		}
 		fails++;
