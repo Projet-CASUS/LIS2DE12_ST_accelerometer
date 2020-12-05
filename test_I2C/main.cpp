@@ -1,7 +1,6 @@
 //g++ main.cpp registers.cpp -o LIS2DE12_Driver -lwiringPi
 
 #include <iostream>
-#include <bitset>
 #include <thread>
 #include <chrono>
 #include <wiringPiI2C.h>
@@ -32,17 +31,19 @@ bool setup(){
     }
 	cout << "I2C communication successfully initiated." << endl;
 	
-	reg.write(CTRL_REG1, 0x2F);		// DATA RATE
-	reg.write(CTRL_REG2, 0x30);		// HIGH PASS FILTERS
-	reg.write(CTRL_REG3, 0x00);		// INTERRUPTS
-	reg.write(CTRL_REG4, 0x00);		// BDU  --  +/-Xg  --  self test 
-	reg.write(CTRL_REG5, 0x00);		// FIFO ENABLE  --  [...]
-	reg.write(CTRL_REG6, 0x00);		// INTERRUPT SETUP
+	//reg.write(CTRL_REG1, 0x2F);		// DATA RATE
+	//reg.write(CTRL_REG2, 0x30);		// HIGH PASS FILTERS
+	//reg.write(CTRL_REG3, 0x00);		// INTERRUPTS
+	//reg.write(CTRL_REG4, 0x00);		// BDU  --  +/-Xg  --  self test 
+	//reg.write(CTRL_REG5, 0x00);		// FIFO ENABLE  --  [...]
+	//reg.write(CTRL_REG6, 0x00);		// INTERRUPT SETUP
 	
-	
+	int a = reg.read(CTRL_REG1);
+	int a = reg.read(CTRL_REG2);
+	int a = reg.read(CTRL_REG3);
+	int a = reg.read(CTRL_REG4);
+	int a = reg.read(CTRL_REG5);
 	int a = reg.read(CTRL_REG6);
-	bitset<8> x(a);
-	cout << x << endl;
 	
 	return true;
 }
