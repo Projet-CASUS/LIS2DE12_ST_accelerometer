@@ -32,15 +32,8 @@ bool setup(){
     }
 	cout << "I2C communication successfully initiated." << endl;
 	
-	int a = reg.read(WHO_AM_I);
-	bitset<8> y(a);
-	cout << y << endl;	
-	
-	reg.write(CTRL_REG1, 0x7F);
-	
-	a = reg.read(CTRL_REG1);
-	bitset<8> z(a);
-	cout << z << endl;
+	if(reg.write(CTRL_REG1, 0x7F) > -1){cout<<YAY<<endl;};
+
 	
 	return true;
 }
