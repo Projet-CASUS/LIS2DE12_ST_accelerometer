@@ -37,6 +37,7 @@ bool setup(){
 	reg.write(CTRL_REG3, 0x00);		// INTERRUPTS
 	reg.write(CTRL_REG4, 0x00);		// BDU  --  +/-Xg  --  self test 
 	reg.write(CTRL_REG5, 0x00);		// FIFO ENABLE  --  [...]
+	reg.write(CTRL_REG6, 0x00);		// INTERRUPT SETUP
 	
 	
 	int a = reg.read(CTRL_REG6);
