@@ -17,8 +17,14 @@ Registers reg;
 int main (int argc, char **argv){
 	// Setup I2C communication
 	setup();
-
-	
+	int a;
+	int fails = 0;
+	while(a==-1){
+		a = reg.read(CTRL_REG1);
+		fails++;sadw
+	}
+	bitset<8> x(a);
+	cout << x << " FAILS : " << fails << endl;
 	
 	run();
 	return 0;
@@ -28,7 +34,7 @@ bool setup(){
 	//Init the device communication
     if (reg.get_fd() == -1) {
         cout << "Failed to initiate I2C communication." << endl;
-		//delete reg
+		//delete regasda
         return false;
     }
 	cout << "I2C communication successfully initiated." << endl;
