@@ -85,7 +85,7 @@ int Registers::verify(int reg, int data){
 			bitset<8> x(result);
 			cout << "Value of register 0x" << reg << " : " << x << endl << endl;
 		}else{
-			cout << "Value of register 0x" << reg << " : " << result << endl << endl;
+			cout << "Value of register 0x" << reg << " : " << dec << result << endl << endl;
 		}
 		
 		// TERMINATE WHEN A GOOD READING IS PERCIEVED
