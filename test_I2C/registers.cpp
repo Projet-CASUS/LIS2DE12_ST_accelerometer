@@ -71,7 +71,7 @@ int Registers::write(int reg, int data){
 	return -1;
 }
 
-void Registers::verify(int reg, int data){
+int Registers::verify(int reg, int data){
 	cout << "VERIFYING if "<< data << " is setup to register : " << reg << endl;
 	int result;
 	int fails = 0;
@@ -81,9 +81,11 @@ void Registers::verify(int reg, int data){
 		cout << "Value of register " << reg << " : " << x << endl << endl;
 		if(result > -1 and result == data){
 			cout << "Failed READ attemp to register " << reg << " : " << fails << endl;
+			return 1;
 		}
 		fails++;
 	}
+	return 0;
 }
 
 // Built just in case... remove if not needed

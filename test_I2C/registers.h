@@ -54,7 +54,7 @@ public:
 	
 	int read(int reg);
 	int write(int reg, int data);
-	void verify(int reg, int data);
+	int verify(int reg, int data);
 	int get_fd();
 };
 
