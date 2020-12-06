@@ -90,7 +90,7 @@ int Registers::verify(int reg, int data){
 		
 		// TERMINATE WHEN A GOOD READING IS PERCIEVED
 		if(result > -1 and result == data){
-			cout << "Failed READ attemp to register " << reg << " : " << fails << endl;
+			cout << "Failed READ attemp to register 0x" << hex << reg << " : " << dec << fails << endl << endl << endl;
 			return 1;
 		}
 		fails++;
