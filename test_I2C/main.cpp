@@ -38,8 +38,8 @@ bool setup(){
 	//reg.write(CTRL_REG5, 0x00);		// FIFO ENABLE  --  [...]
 	//reg.write(CTRL_REG6, 0x00);		// INTERRUPT SETUP
 	
-	reg.verify(CTRL_REG1, 0x2F);
-	reg.verify(CTRL_REG2, 0x30);
+	reg.verify(WHO_AM_I, 51);
+	//reg.verify(CTRL_REG1, 0x30);
 	
 	return true;
 }
