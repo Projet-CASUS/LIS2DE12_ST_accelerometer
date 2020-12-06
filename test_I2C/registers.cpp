@@ -79,8 +79,16 @@ int Registers::verify(int reg, int data){
 	int fails = 0;
 	while(1){
 		result = wiringPiI2CReadReg8(fd, reg);
-		bitset<8> x(result);
-		cout << "Value of register " << reg << " : " << x << endl << endl;
+		
+		// PRINT EACH AND EVERY READINGS
+		if(result > -1){
+			bitset<8> x(result);
+			cout << "Value of register 0x" << reg << " : " << x << endl << endl;
+		}else{
+			cout << "Value of register 0x" << reg << " : " << result << endl << endl;
+		}
+		
+		// TERMINATE WHEN A GOOD READING IS PERCIEVED
 		if(result > -1 and result == data){
 			cout << "Failed READ attemp to register " << reg << " : " << fails << endl;
 			return 1;
