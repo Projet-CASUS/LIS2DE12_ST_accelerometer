@@ -72,7 +72,9 @@ int Registers::write(int reg, int data){
 }
 
 int Registers::verify(int reg, int data){
-	cout << "VERIFYING if "<< data << " is setup to register : " << reg << endl;
+	bitset<8> y(data);
+	cout << "VERIFYING if register "<< "0x" << hex << reg;
+	cout << " is setup to : " << y << endl;
 	int result;
 	int fails = 0;
 	while(1){
