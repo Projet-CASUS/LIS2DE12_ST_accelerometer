@@ -1,4 +1,5 @@
-//g++ main.cpp registers.cpp -o LIS2DE12_Driver -lwiringPi
+// COMPILATION COMMAND:
+// g++ main.cpp registers.cpp -o LIS2DE12_Driver -lwiringPi
 
 #include <iostream>
 #include <thread>
