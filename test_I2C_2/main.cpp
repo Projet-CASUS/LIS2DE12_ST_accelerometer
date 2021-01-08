@@ -9,7 +9,6 @@
 
 int main (int argc, char **argv){
 	// Setup I2C communication
-	setup();
 
 	//run();
 	return 0;
