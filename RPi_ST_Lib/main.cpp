@@ -1,5 +1,5 @@
 // COMPILATION COMMAND:
-// g++ main.cpp lis2de12_reg.c -o LIS2DE12_Driver
+// g++ main.cpp lis2de12_reg.c -o LIS2DE12_Driver -lwiringPi
 
 #include <iostream>
 #include <thread>
@@ -9,7 +9,7 @@
 
 int main (int argc, char **argv){
 	// Setup I2C communication
-
+	fd = wiringPiI2CSetup(DEVICE_ID);
 	//run();
 	return 0;
 }

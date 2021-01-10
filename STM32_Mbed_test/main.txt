@@ -1,0 +1,39 @@
+//BUILD A PROJECT IN MBED STUDIO OF TYPE "mbed-os-empty"
+//COPY PAST this code into your main
+
+//Read the documentation -> (If you want to read a register you have to do a write and then read)
+
+#include "mbed.h"
+#include <cstdio>
+#include <string>
+#include <I2C.h>
+
+#define LIS2DE12_ID 0x18 << 1
+#define WHO_AM_I 0x0F << 1
+#define CTRL_REG0 0x1E << 1
+
+#define WHI_value 0x33
+
+void setup();
+
+I2C i2c(PB_9, PB_8);
+
+int main()
+{
+    while (true) {
+        setup();
+        printf("\n ---------------------------- \n");
+    }
+}
+
+void setup(){
+    i2c.frequency(100000);
+    char cmd[1];
+    cmd[0] = CTRL_REG0;
+
+    int check = i2c.write(CTRL_REG0);// this method do not write on the device, it only write on the I2C BUS
+    
+    ThisThread::sleep_for(2s);
+    printf("Write : %d", check);
+    
+}
